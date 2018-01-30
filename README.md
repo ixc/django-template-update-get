@@ -36,4 +36,4 @@ Allowed values are:
  - lists of strings
  - None (without quotes)
 
-If a attribute is set to None or an empty list, the GET parameter is removed.
+If an attribute is set to None or an empty list, the GET parameter is removed.
