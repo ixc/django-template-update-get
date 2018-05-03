@@ -68,29 +68,29 @@ class UpdateGetNode(template.Node):
             if actual_attr:
                 if op == '=':
                     if actual_val is None or actual_val == []:
-                        if params.has_key(actual_attr):
+                        if actual_attr in params:
                             del params[actual_attr]
-                    elif hasattr(actual_val, '__iter__'):
+                    elif isinstance(actual_val, list):
                         params.setlist(actual_attr, actual_val)
                     else:
-                        params[actual_attr] = unicode(actual_val)
+                        params[actual_attr] = str(actual_val)
                 elif op == '+=':
                     if actual_val is None or actual_val == []:
                         if params.has_key(actual_attr):
                             del params[actual_attr]
-                    elif hasattr(actual_val, '__iter__'):
+                    elif isinstance(actual_val, list):
                         params.setlist(actual_attr, params.getlist(actual_attr) + list(actual_val))
                     else:
-                        params.appendlist(actual_attr, unicode(actual_val))
+                        params.appendlist(actual_attr, str(actual_val))
                 elif op == '-=':
                     li = params.getlist(actual_attr)
-                    if hasattr(actual_val, '__iter__'):
+                    if isinstance(actual_val, list):
                         for v in list(actual_val):
                             if v in li:
                                 li.remove(v)
                         params.setlist(actual_attr, li)
                     else:
-                        actual_val = unicode(actual_val)
+                        actual_val = str(actual_val)
                         if actual_val in li:
                             li.remove(actual_val)
                         params.setlist(actual_attr, li)
