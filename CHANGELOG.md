@@ -1,6 +1,11 @@
 # CHANGELOG
 
 
+## 1.1.1 (3 May 2018)
+
+- PyPI fix.
+
+
 ## 1.1.0 (3 May 2018)
 
 - Python 3 compatibility + test coverage - https://github.com/ixc/django-template-update-get/commit/e1d43c3c3eb0cf0fcbfd38881799876fcfba25a2
