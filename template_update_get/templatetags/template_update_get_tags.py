@@ -1,7 +1,7 @@
 import re
 from django import template
 from django.http import QueryDict
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 
 
 register = template.Library()
@@ -39,7 +39,7 @@ unencoded_ampersands_re = re.compile(r'&(?!(\w+|#\d+);)')
 
 def fix_ampersands(value):
     """Returns given HTML with all unencoded ampersands encoded correctly."""
-    return unencoded_ampersands_re.sub('&amp;', force_text(value))
+    return unencoded_ampersands_re.sub('&amp;', force_str(value))
 
 
 class UpdateGetNode(template.Node):
