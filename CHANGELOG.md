@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.2 (17 Nov 2023)
+
+- Replace outdated call to `force_text`
+
 
 ## 1.1.1 (3 May 2018)
 
