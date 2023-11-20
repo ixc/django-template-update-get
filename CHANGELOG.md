@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2.0.0. (20 Nov 2023)
+
+- Drop support for Python 2 and Django<3
+- Black formatting
+
 ## 1.1.2 (17 Nov 2023)
 
 - Replace outdated call to `force_text`

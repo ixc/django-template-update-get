@@ -1,5 +1,8 @@
-import django, sys
+import sys
+
+import django
 from django.conf import settings
+from django.test.runner import DiscoverRunner
 
 APP = 'template_update_get'
 
@@ -27,7 +30,6 @@ settings.configure(
 
 django.setup()
 
-from django.test.runner import DiscoverRunner
 
 test_runner = DiscoverRunner(verbosity=1)
 

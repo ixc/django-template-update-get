@@ -1,7 +1,4 @@
-try:  # Python 2
-    from HTMLParser import HTMLParser
-except ImportError:
-    from html.parser import HTMLParser
+from html import unescape
 from django.test import TestCase
 from django.test.client import RequestFactory
 from django.template import Template, Context
@@ -15,7 +12,7 @@ def render(content, url, context):
     t = Template('{% load template_update_get_tags %}' + content)
     c = Context(context)
     rendered = t.render(c)
-    return HTMLParser().unescape(rendered)
+    return unescape(rendered)
 
 
 class TemplateUpdateGetTests(TestCase):
